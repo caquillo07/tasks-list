@@ -5,7 +5,7 @@ angular
 function HomePageController($scope, $filter, tasks) {
     'use strict'
 
-    this.title = "Tasks";
+    this.title = "today's tasks";
     this.tasks = tasks;
     this.completedCount = 0;
     this.circleConfig = {

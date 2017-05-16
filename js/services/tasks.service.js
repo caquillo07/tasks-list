@@ -16,12 +16,20 @@ function TasksService() {
         {title: 'title 10', completed: false},
     ];
 
-    this.getTasks = function() {
-        // Shuffle tasks to show different ones each time app loads
-        var shuffledTasks = angular.copy(tasks).sort(function() { return 0.5 - Math.random() });
+    var userTasks = []
 
-        // Returnt the first 6 tasks
-        return shuffledTasks.splice(0, 6);
+    this.getTasks = function() {
+        if (userTasks.length === 0) {
+            console.log('user tasks is empty');
+            // Shuffle tasks to show different ones each time app loads
+            var shuffledTasks = angular.copy(tasks).sort(function() { return 0.5 - Math.random() });
+            
+            // Return the first 6 tasks
+            userTasks = shuffledTasks.splice(0, 6);
+        }
+        console.log('user array ' + userTasks);
+        return userTasks;
+        
     }
 
     this.getAllTasks = function() {
