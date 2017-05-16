@@ -18,17 +18,22 @@
         </ul>
     </section>
     <footer id="footer" ng-show="home.tasks.length" ng-cloak>
-        <div>
-            <label></label>
-            <a href="#/tasks">Full Task List</a>
-
-        </div>
-        <div circle-progress 
-            count="home.completedCount" 
-            total="home.tasks.length" 
-            circle-config="home.circleConfig" 
-            ng-if="home.circleConfig != undefined" 
-        ></div>
+        <ul id="menu">
+            <li>
+                <a href="#/tasks">Full task list</a>
+            </li>
+            <li>
+                <a href="#/tasks">Get new tasks</a>
+            </li>
+            <li>
+                <div circle-progress 
+                    count="home.completedCount" 
+                    total="home.tasks.length" 
+                    circle-config="home.circleConfig" 
+                    ng-if="home.circleConfig != undefined" 
+                ></div>
+            </li>
+        </ul>
     </footer>
     
 </section>
