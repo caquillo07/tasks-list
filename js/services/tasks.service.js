@@ -18,7 +18,7 @@ function TasksService() {
 
     this.getTasks = function() {
         // Shuffle tasks to show different ones each time app loads
-        var shuffledTasks = tasks.sort(function() { return 0.5 - Math.random() });
+        var shuffledTasks = angular.copy(tasks).sort(function() { return 0.5 - Math.random() });
 
         // Returnt the first 6 tasks
         return shuffledTasks.splice(0, 6);

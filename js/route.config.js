@@ -17,6 +17,16 @@ function config($routeProvider) {
                 }
             }
         })
+        .when('/tasks', {
+            templateUrl: 'views/tasks-page.html',
+            controller: 'TasksPageController',
+            controllerAs: 'tasks',
+            resolve: {
+                tasks: function(TasksService) {
+                    return TasksService.getAllTasks();
+                }
+            }
+        })
         .otherwise({
 			redirectTo: '/'
         });

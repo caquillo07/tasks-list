@@ -8,15 +8,28 @@
     </head>
     <body ng-app="TaskList">
         <ng-view></ng-view>
+
+        <!-- Libs -->
         <script src="lib/jquery-v1.11.1.js"></script>
         <script src="lib/circle-progress.min.js"></script>
         <script src="lib/angular-v1.2.22.js"></script>
         <script src="lib/angular-route-v1.2.22.js"></script>
+
+        <!-- App Config -->
         <script src="js/app.module.js"></script>
+
+        <!-- Routing -->
         <script src="js/route.config.js"></script>
+
+        <!-- Controllers -->
         <script src="js/controllers/home.controller.js"></script>
         <script src="js/controllers/circle-progress.controller.js"></script>        
+        <script src="js/controllers/tasks.controller.js"></script>        
+
+        <!-- Services -->
         <script src="js/services/tasks.service.js"></script>
+
+        <!-- Directives -->        
         <script src="js/directives/circle-progress.directive.js"></script>
     </body>
 </html>
