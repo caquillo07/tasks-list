@@ -25,15 +25,13 @@
             <li>
                 <a href="#/tasks">Get new tasks</a>
             </li>
-            <li>
-                <div circle-progress 
-                    count="home.completedCount" 
-                    total="home.tasks.length" 
-                    circle-config="home.circleConfig" 
-                    ng-if="home.circleConfig != undefined" 
-                ></div>
-            </li>
         </ul>
+        <div circle-progress 
+            count="home.completedCount" 
+            total="home.tasks.length" 
+            circle-config="home.circleConfig" 
+            ng-if="home.circleConfig != undefined" 
+        ></div>
     </footer>
     
 </section>

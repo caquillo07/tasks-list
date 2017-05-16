@@ -77,7 +77,7 @@ input[type="checkbox"] {
 }
 
 #menu {
-	margin: 0;
+	margin: 20px auto;
 	padding: 0;
 	list-style: none;
     width: 100%;
@@ -87,9 +87,28 @@ input[type="checkbox"] {
 
 #menu li {
     display: inline;
+    padding: 10px;
 }
 
-#menu #circle {
+#menu li a {
+	color: inherit;
+	margin: 3px;
+	padding: 3px 7px;
+	text-decoration: none;
+	border: 1px solid transparent;
+	border-radius: 3px;
+}
+
+#menu li a:hover {
+	border-color: rgba(175, 47, 47, 0.1);
+}
+
+/* Might need to get rid of */
+#menu #circle strong {
+    text-align: center;
+    width: 100%;
+    line-height: 40px;
+    font-size: 30px;
 }
 
 #task-list {
