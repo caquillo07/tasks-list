@@ -7,7 +7,9 @@ function circleProgress() {
         restrict: 'EA',
         templateUrl: 'templates/circle-progress.html',
         scope: {
-            tasks: '='
+            count: '=',
+            total: '=',
+            circleConfig: '='
         },
         controller: 'CircleProgressController',
         controllerAs: 'circle'

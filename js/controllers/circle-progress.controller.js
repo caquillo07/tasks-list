@@ -3,24 +3,23 @@ angular
     .controller('CircleProgressController', CircleProgressController);
 
 function CircleProgressController($scope) {
-    console.log("hello world");
-    this.tasks = $scope.tasks;
-    $('#circle').circleProgress({
-        value: 0.5,
-        size: 80,
-        fill: {
-            gradient: ["red", "orange"]
-        }
-    });
+    'use strict'
 
-    $scope.$watch('tasks', function() {
-        console.log('something changed');
-    })
+    this.completedCount = $scope.count;
+    console.log($scope);
 
-    // $('.second.circle').circleProgress({
-    //     value: 0.6
-    // }).on('circle-animation-progress', function(event, progress) {
-    //     $(this).find('strong').html(Math.round(100 * progress) + '<i>%</i>');
-    // });
+    $('#circle')
+        .circleProgress($scope.circleConfig)
+        .on('circle-animation-progress', function(event, progress, stepValue) {
+            $(this).find('strong').html($scope.count + '/' + $scope.total);
+        });
+
+    // TODO: - make the binding work
+    $scope.$watch('count', function() {
+        console.log($scope);
+        var value = $scope.count / $scope.total;
+        $('#circle').circleProgress('value', value);
+        
+    }, true);
 
 }

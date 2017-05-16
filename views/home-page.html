@@ -1,8 +1,13 @@
 <h1>{{home.title}}</h1>
 <ul>
     <li ng-repeat="task in home.tasks">
-        <input type="checkbox" ng-model="task.completed" ng-change="home.toggleCompleted(task)">
+        <input type="checkbox" ng-model="task.completed" ng-change="home.updateCompletedCount()">
         <label>{{task.title}}</label>
     </li>
 </ul>
-<div circle-progress tasks="home.tasks"></div>
+<div circle-progress 
+    count="home.completedCount" 
+    total="home.tasks.length" 
+    circleConfig="circleConfig" 
+    ng-if="circleConfig != undefined" 
+></div>

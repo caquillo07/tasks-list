@@ -2,14 +2,22 @@ angular
     .module('TaskList')
     .controller('HomePageController', HomePageController);
 
-function HomePageController($scope, tasks) {
+function HomePageController($scope, $filter, tasks) {
     'use strict'
 
     this.title = "Tasks";
     this.tasks = tasks;
+    this.completedCount = 0;
+    $scope.circleConfig = {
+        fill: {
+            color: 'rgba(20, 157, 234, 1)'
+        },
+        lineCap: 'round'
+    }
 
-    this.toggleCompleted = function(task) {
-        // if action needed when toggled
+    this.updateCompletedCount = function() {
+        this.completedCount = $filter('filter')(tasks, { completed: true }).length;
+        console.log(this.completedCount);
     }
 
 }
