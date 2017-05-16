@@ -8,7 +8,7 @@ function HomePageController($scope, $filter, tasks) {
     this.title = "Tasks";
     this.tasks = tasks;
     this.completedCount = 0;
-    $scope.circleConfig = {
+    this.circleConfig = {
         fill: {
             color: 'rgba(20, 157, 234, 1)'
         },

@@ -6,7 +6,6 @@ function CircleProgressController($scope) {
     'use strict'
 
     this.completedCount = $scope.count;
-    console.log($scope);
 
     $('#circle')
         .circleProgress($scope.circleConfig)
@@ -16,10 +15,8 @@ function CircleProgressController($scope) {
 
     // TODO: - make the binding work
     $scope.$watch('count', function() {
-        console.log($scope);
         var value = $scope.count / $scope.total;
         $('#circle').circleProgress('value', value);
-        
     }, true);
 
 }

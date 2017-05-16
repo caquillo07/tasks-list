@@ -23,4 +23,8 @@ function TasksService() {
         // Returnt the first 6 tasks
         return shuffledTasks.splice(0, 6);
     }
+
+    this.getAllTasks = function() {
+        return tasks;
+    }
 }
