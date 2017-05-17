@@ -2,8 +2,8 @@
     <header>
         <h1>{{home.title}}</h1>
     </header>
-    <section id="main" ng-show="home.tasks.length" ng-cloak>
-        <ul id="task-list">
+    <section class="main" ng-show="home.tasks.length" ng-cloak>
+        <ul class="task-list">
             <li ng-repeat="task in home.tasks" ng-class="{completed: task.completed}">
                 <div class="task">
                     <input 
@@ -17,13 +17,10 @@
             </li>
         </ul>
     </section>
-    <footer id="footer" ng-show="home.tasks.length" ng-cloak>
-        <ul id="menu">
+    <footer class="footer" ng-show="home.tasks.length" ng-cloak>
+        <ul class="menu">
             <li>
                 <a href="#/tasks">Full task list</a>
-            </li>
-            <li>
-                <a href="#/tasks">Get new tasks</a>
             </li>
         </ul>
         <div circle-progress 

@@ -8,7 +8,7 @@ body {
 	font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	line-height: 1.4em;
 	/*background: #f5f5f5;*/
-    background: lightblue;
+    background: ecf0f1;
 	color: #4d4d4d;
 	min-width: 230px;
 	max-width: 550px;
@@ -19,7 +19,8 @@ body {
 	font-weight: 300;
 }
 
-#usertasks {
+#usertasks,
+#all-tasks {
 	background: #fff;
 	margin: 130px 0 40px 0;
 	position: relative;
@@ -28,14 +29,16 @@ body {
 	            0 25px 50px 0 rgba(0, 0, 0, 0.1);
 }
 
-#usertasks h1 {
+#usertasks h1,
+#all-tasks h1 {
     position: absolute;
     top: -155px;
     width: 100%;
 	font-size: 85px;
 	font-weight: 100;
     text-align: center;
-	color: rgba(175, 47, 47, 0.15);
+	/*color: rgba(175, 47, 47, 0.15);*/
+	color: lightblue;
 	-webkit-text-rendering: optimizeLegibility;
 	-moz-text-rendering: optimizeLegibility;
 	text-rendering: optimizeLegibility;
@@ -45,13 +48,13 @@ input[type="checkbox"] {
 	outline: none;
 }
 
-#main {
+.main {
 	position: relative;
 	z-index: 2;
 	border-top: 1px solid #e6e6e6;
 }
 
-#footer:before {
+.footer:before {
 	content: '';
 	position: absolute;
 	right: 0;
@@ -66,7 +69,7 @@ input[type="checkbox"] {
 	            0 17px 2px -6px rgba(0, 0, 0, 0.2);
 }
 
-#footer {
+.footer {
     color: #777;
     background: #fdfdfd;
     /*padding: 10px 15px;*/
@@ -76,62 +79,65 @@ input[type="checkbox"] {
     border-top: 1px solid #e6e6e6;
 }
 
-#menu {
+.menu {
 	margin: 20px auto;
 	padding: 0;
 	list-style: none;
     width: 100%;
+	min-height: 25px;
 	/*right: 0;
 	left: 0;*/
 }
 
-#menu li {
+.menu li {
     display: inline;
     padding: 10px;
 }
 
-#menu li a {
+.menu li a {
 	color: inherit;
 	margin: 3px;
 	padding: 3px 7px;
 	text-decoration: none;
 	border: 1px solid transparent;
 	border-radius: 3px;
+	left: -15px;
+	position: relative;
 }
 
-#menu li a:hover {
+.menu li a:hover {
 	border-color: rgba(175, 47, 47, 0.1);
 }
 
 /* Might need to get rid of */
-#menu #circle strong {
+.menu #circle strong {
     text-align: center;
     width: 100%;
     line-height: 40px;
     font-size: 30px;
 }
 
-#task-list {
+.task-list {
     margin: 0;
 	padding: 0;
 	list-style: none;
 }
 
-#task-list li {
+.task-list li {
     position: relative;
 	font-size: 24px;
 	border-bottom: 1px solid #ededed;
 }
 
-#task-list li:last-child {
+.task-list li:last-child {
 	/*border-bottom: 1px solid #000;*/
 }
 
-#task-list li .task {
+.task-list li .task {
     
 }
 
-#task-list li .toggle {
+.task-list li .toggle {
 	text-align: center;
 	width: 40px;
 	height: 40px;
@@ -144,15 +150,15 @@ input[type="checkbox"] {
 	appearance: none;
 }
 
-#task-list li .toggle:after {
+.task-list li .toggle:after {
 	content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#ededed" stroke-width="3"/></svg>');
 }
 
-#task-list li .toggle:checked:after {
+.task-list li .toggle:checked:after {
 	content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#bddad5" stroke-width="3"/><path fill="#5dc2af" d="M72 25L42 71 27 56l-4 4 20 20 34-52z"/></svg>');
 }
 
-#task-list li label {
+.task-list li label {
     white-space: pre-line;
     word-break: break-all;
     padding: 15px 60px 15px 15px;
@@ -162,7 +168,7 @@ input[type="checkbox"] {
     transition: color 0.25s
 }
 
-#task-list li.completed label {
+.task-list li.completed label {
 	color: #d9d9d9;
 	text-decoration: line-through;
 }

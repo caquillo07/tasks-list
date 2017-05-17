@@ -5,7 +5,7 @@ angular
 function TasksPageController($scope, tasks) {
     'user strict'
 
-    this.title = "All Tasks"
+    this.title = "all tasks"
     this.tasks = tasks;
 
 }
